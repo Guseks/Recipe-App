@@ -1,0 +1,17 @@
+.recipe-card {
+  border: 2px solid black;
+  padding:  10px 30px;
+  border-radius: 10px;
+  height: 300px;
+  width: 300px;
+  background-color: white;
+
+}
+
+.ingredients {
+  font-weight: 700;
+}
+
+.recipe-desc, .ingredient {
+  font-size: 14px;
+}

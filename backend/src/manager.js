@@ -13,7 +13,7 @@ const myRecipes = [{
 },
 
 {
-  id: 1,
+  id: 2,
   name: "Krämig champinjon pasta",
   description: "Enkel krämig pasta sås med champinjoner och grönsaker",
   ingredients: ["Pasta", "Champinjoner", "Paprika", "Creme Fraiche vitlök Parmesan", "Grädde", "Salt", "svartpeppar"],

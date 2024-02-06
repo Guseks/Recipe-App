@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import RecipeList from "./components/RecipeList/RecipeList";
 
 import "./App.css";
 
+interface RecipeData {
+  id: number;
+  name: string;
+  description: string;
+  ingredients: string[];
+  instructions: string[];
+  category: string;
+}
+
 function App() {
-  const [myRecipes, setMyRecipes] = useState([]);
+  const [myRecipes, setMyRecipes] = useState<RecipeData[]>([]);
   useEffect(() => {
     const fetchRecipes = async () => {
       const response = await axios.get("http://localhost:3000/api/recipes");
@@ -14,8 +24,7 @@ function App() {
   }, []);
   return (
     <div className="app">
-      <h2>My Recipes</h2>
-      {myRecipes}
+      <RecipeList recipes={myRecipes} />
     </div>
   );
 }
