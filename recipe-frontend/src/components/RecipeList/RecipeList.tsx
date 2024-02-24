@@ -1,26 +1,14 @@
-import React from "react";
 import "./recipeList.css";
 import RecipeCard from "../RecipeCard/RecipeCard";
+import { useRecipeContext } from "../../contexts/RecipeContext";
 
-interface RecipeData {
-  id: number;
-  name: string;
-  description: string;
-  ingredients: string[];
-  instructions: string[];
-  category: string;
-}
-
-interface RecipeListProps {
-  recipes: RecipeData[];
-}
-
-const RecipeList = ({ recipes }: RecipeListProps) => {
+const RecipeList = () => {
+  const { myRecipes } = useRecipeContext();
   return (
     <div>
-      <h1>My Recipes</h1>
+      <h1 className="recipe-headline">My Recipes</h1>
       <ul className="recipe-list">
-        {recipes.map((recipe) => (
+        {myRecipes.map((recipe) => (
           <li className="recipe-list-item" key={recipe.id}>
             <RecipeCard recipe={recipe} />
           </li>

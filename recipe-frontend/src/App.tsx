@@ -1,30 +1,46 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import RecipeList from "./components/RecipeList/RecipeList";
-
+import Home from "./pages/Home";
+import NewRecipe from "./pages/NewRecipe";
 import "./App.css";
-
-interface RecipeData {
-  id: number;
-  name: string;
-  description: string;
-  ingredients: string[];
-  instructions: string[];
-  category: string;
-}
+import { Routes, Route, NavLink } from "react-router-dom";
+import ShowRecipe from "./pages/ShowRecipe";
+import { RecipeProvider } from "./contexts/RecipeContext";
 
 function App() {
-  const [myRecipes, setMyRecipes] = useState<RecipeData[]>([]);
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      const response = await axios.get("http://localhost:3000/api/recipes");
-      setMyRecipes(response.data);
-    };
-    fetchRecipes();
-  }, []);
   return (
     <div className="app">
-      <RecipeList recipes={myRecipes} />
+      <nav className="nav">
+        <ul>
+          <li>
+            <NavLink
+              style={({ isActive }) => {
+                return isActive ? { textDecoration: "underline" } : {};
+              }}
+              className="nav-link"
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              style={({ isActive }) => {
+                return isActive ? { textDecoration: "underline" } : {};
+              }}
+              className="nav-link"
+              to="/recipe/new"
+            >
+              Add Recipe
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+      <RecipeProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipe/new" element={<NewRecipe />} />
+          <Route path="/recipe/:id" element={<ShowRecipe />} />
+        </Routes>
+      </RecipeProvider>
     </div>
   );
 }
