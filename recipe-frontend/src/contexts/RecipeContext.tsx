@@ -12,6 +12,7 @@ interface RecipeData {
   ingredients: string[];
   instructions: string[];
   category: string;
+  imagePath: string;
 }
 
 interface RecipeContextValue {

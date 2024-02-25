@@ -1,20 +1,22 @@
 const myRecipes = [{
   id: 1,
-  name: "Spaghetti Bolognese",
-  description: "Classic Italian pasta dish with meat sauce.",
-  ingredients: ["spaghetti", "ground beef", "tomato sauce", "onion", "garlic"],
+  name: "Pasta och Köttfärssås",
+  description: "Köttfärssås och pasta",
+  ingredients: ["spaghetti", "köttfärs", "Krossade tomater", "lök", "vitlök"],
   instructions: [
-    "Cook spaghetti according to package instructions.", 
-    "In a separate pan, brown ground beef with onion and garlic.",
-    "Add tomato sauce and simmer.", 
-    "Serve sauce over cooked spaghetti."
+    "Koka valfri pasta", 
+    "fräs köttfärs, lök och vitlök",
+    "Tillsätt tomatpure och chiliflakes, fräst 1-2 min",
+    "häll i krossade tomater, ev. grädde",
+    "Krydda med salt, peppar, oregano" 
   ],
   category: "Pasta",
+  imagePath: "../images/spaghetti_och_kottfarssas.jpg",
 },
 
 {
   id: 2,
-  name: "Krämig champinjon pasta",
+  name: "Champinjon pasta",
   description: "Enkel krämig pasta sås med champinjoner och grönsaker",
   ingredients: ["Pasta", "Champinjoner", "Paprika", "Creme Fraiche vitlök Parmesan", "Grädde", "Salt", "svartpeppar"],
   instructions: [
@@ -27,6 +29,7 @@ const myRecipes = [{
     "Smaka av med salt och peppar" 
   ],
   category: "Pasta",
+  imagePath: "../images/spaghetti_och_kottfarssas.jpg",
 },
 
 ];

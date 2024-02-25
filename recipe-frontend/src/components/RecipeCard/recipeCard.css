@@ -2,14 +2,17 @@
   border: 2px solid black;
   padding:  10px 30px;
   border-radius: 10px;
-  height: 300px;
-  width: 300px;
+  height: 160px;
+  width: 200px;
   background-color: white;
-
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
 }
 
-.ingredients {
-  font-weight: 700;
+.recipe-card h3, .recipe-desc {
+  margin: 0;
 }
 
 .recipe-desc, .ingredient {
@@ -22,11 +25,13 @@
   border: 2px solid rgb(50,50,50);
   border-radius: 5px;
   font-weight: 500;
-  
+  position: absolute;
+  bottom: 20px
 }
 
 .show-details:hover {
   background-color: rgb(50,50,50);
+  cursor: pointer;
   color: white;
   transition: 0.2s;
 }

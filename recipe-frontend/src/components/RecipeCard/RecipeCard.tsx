@@ -8,6 +8,7 @@ interface RecipeData {
   ingredients: string[];
   instructions: string[];
   category: string;
+  imagePath: string;
 }
 
 interface RecipeCardProps {
@@ -21,14 +22,8 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
     navigate(`/recipe/${recipe.id}`);
   };
 
-  return (
-    <div className="recipe-card">
-      <h3>{recipe.name}</h3>
-      <p className="recipe-desc">{recipe.description}</p>
-      <button className="show-details" onClick={() => handleClick()}>
-        Mer info
-      </button>
-      <p className="ingredients"> Ingredienser: </p>
+  /*
+  <p className="ingredients"> Ingredienser: </p>
       <ul>
         {recipe.ingredients.map((ingredient, index) => (
           <li className="ingredient" key={index}>
@@ -36,6 +31,15 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
           </li>
         ))}
       </ul>
+    */
+
+  return (
+    <div className="recipe-card">
+      <h3>{recipe.name}</h3>
+      <p className="recipe-desc">{recipe.description}</p>
+      <button className="show-details" onClick={() => handleClick()}>
+        Mer info
+      </button>
     </div>
   );
 };
