@@ -34,7 +34,18 @@ const myRecipes = [{
 
 ];
 
-export const addRecipe = () => {
+export const addRecipe = (recipeInfo) => {
+  const newRecipe = {
+    id: myRecipes.length +1,
+    name: recipeInfo.name,
+    description: recipeInfo.description,
+    ingredients: recipeInfo.ingredients,
+    instructions: recipeInfo.instructions,
+    category: recipeInfo.category,
+    imagePath: "../images/spaghetti_och_kottfarssas.jpg",
+  }
+  myRecipes.push(newRecipe);
+  return newRecipe;
 
 }
 
